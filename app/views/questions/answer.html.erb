@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row vh-100 align-items-center">
+    <div class="w-50 m-auto text-center">
+      <div class="text-start mb-5 p-2">
+          <p class="fs-2"><%= params[:question] %></p>
+          <p class="fs-2">-You</p>
+      </div>
+      <% if params[:question] == "I am going to work" %>
+        <div class="text-start bg-info p-2">
+            <p class="fs-2 fw-bold">Great!</p>
+            <p class="fs-2">-Your coach</p>
+        </div>
+      <% elsif params[:question].include?("?") %>
+        <div class="text-start bg-warning p-2">
+          <p class="fs-2 fw-bold">Silly question, get dressed and go to work!</p>
+          <p class="fs-2">-Your coach</p>
+        </div>
+      <% else %>
+        <div class="text-start bg-danger p-2">
+          <p class="fs-2 fw-bold">I don't care, get dressed and go to work!</p>
+          <p class="fs-2">-Your coach</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="row align-items-center text-center">
+      <%= link_to "Back to ask", ask_path %>
+    </div>
+  </div>
+</div>
